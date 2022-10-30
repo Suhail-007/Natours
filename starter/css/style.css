@@ -29,9 +29,9 @@ body {
     url('../img/hero.jpg');
   background-size: cover;
   background-position: top;
-   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-   position: relative;
-/*Triangle*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  /*Triangle*/
   /*clip-path: polygon(50% 0, 100% 100%, 0 100%);*/
 }
 
@@ -57,6 +57,7 @@ body {
 .heading-primary {
   text-transform: uppercase;
   color: #fff;
+  margin-bottom: 1rem;
 }
 
 .heading-primary-main {
@@ -80,11 +81,11 @@ body {
     opacity: 0;
     transform: translateX(-100px);
   }
-  
+
   80% {
     transform: translateX(10px);
   }
-  
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -96,11 +97,11 @@ body {
     opacity: 0;
     transform: translateX(100px);
   }
-  
+
   80% {
     transform: translateX(-10px);
   }
-  
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -109,14 +110,63 @@ body {
 
 .btn:link,
 .btn:visited {
-  text-transform: capitalize; 
+  text-transform: capitalize;
   text-decoration: none;
-  padding: 20px;
+  padding: 15px 40px;
+  border-radius: 100px;
   display: inline-block;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
   background: #fff;
   color: #777;
+}
+
+.btn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background: #fff;
   border-radius: 100px;
+}
+
+.btn:hover::after {
+  transform: scale(1.4, 1.8);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 1s 0.75s backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
