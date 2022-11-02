@@ -41,7 +41,7 @@
 }
 
 html {
-  font-size: 25%;
+  font-size: 35%;
 }
 
 body {
@@ -102,7 +102,7 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 0.2rem;
-  translate: all 0.2s;
+  transition: all 0.2s;
 }
 .heading-secondary:hover {
   transform: skewY(2deg) skewX(10deg) scale(1.1);
@@ -120,6 +120,39 @@ body {
 }
 .paragraph:not(:last-child) {
   margin-bottom: 3rem;
+}
+
+.composition {
+  position: relative;
+}
+.composition_photo {
+  width: 55%;
+  position: absolute;
+  outline-offset: 2rem;
+  z-index: 1;
+  transition: all 0.2s;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.3);
+}
+.composition_photo-p1 {
+  top: -2rem;
+  left: 0;
+}
+.composition_photo-p2 {
+  top: 2rem;
+  right: 0;
+}
+.composition_photo-p3 {
+  top: 10rem;
+  left: 20%;
+}
+.composition_photo:hover {
+  transform: scale(1.05) translateY(0.5rem);
+  outline: 2rem solid #55c57a;
+  z-index: 2;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+}
+.composition:hover .composition_photo:not(:hover) {
+  transform: scale(0.9);
 }
 
 .btn:link, .btn:visited {
@@ -184,6 +217,26 @@ body {
 .btn-text:active {
   transform: translateY(0);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2.5rem;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s;
+  box-shadow: 0px 1.5rem 4rem rgba(0, 0, 0, 0.5);
+}
+.feature-box_icon {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.feature-box_icon:hover {
+  transform: translateY(-1rem);
 }
 
 .row {
@@ -254,6 +307,12 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url("../img/nat-4.jpg");
+  background-size: cover;
 }
 
 @media (min-width: 1024px) {
