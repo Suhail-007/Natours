@@ -36,6 +36,15 @@
       border-radius: 10rem;
     }
   }
+  &-green {
+    background: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background: $color-primary;
+      border-radius: 10rem;
+    }
+  }
 
   &::after {
     content: "";
