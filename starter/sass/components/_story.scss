@@ -1,13 +1,13 @@
 .story {
   width: 70%;
   border-radius: 3px;
-  box-shadow: 0 1rem 6rem rgba($color-black, .1);
-  background: $color-white;
+  background: rgba($color-white, .5);
   padding: 6rem;
   padding-left: 9rem;
   margin: 0 auto;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+  box-shadow: 0 1rem 6rem rgba($color-black, .1);
 
   &:not(:last-child) {
     margin-bottom: 5rem;
