@@ -12,6 +12,8 @@
     top: 6rem;
     right: 6rem;
     z-index: 12;
+    text-align: center;
+    cursor: pointer;
     box-shadow: 0 1rem 3rem rgba($color-black, .3);
   }
 
@@ -34,9 +36,9 @@
     top: 0;
     left: 0;
     z-index: 11;
-
     opacity: 0;
     width: 0;
+    pointer-events:none;
     transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /* to fix the nav comig from left side */
@@ -56,6 +58,7 @@
     margin: 1.5rem;
   }
 
+  //Functionality
   &__item-name {
 
     &:link,
@@ -87,10 +90,63 @@
   &__toggle:checked~&__nav {
     opacity: 1;
     width: 100%;
-
+    pointer-events:auto;
+    
     /* to fix nav coming from left side */
     /* pointer-events: auto; 
-             user-select: auto;
-             visibility: visible; */
+     user-select: auto;
+     visibility: visible; */
+  }
+
+  //Icon
+  &__icon {
+    position: relative;
+    margin-top: 3.4rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background: $color-grey-dark-2;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {
+      top: -.8rem;
+    }
+
+    &::after {
+      top: .8rem;
+    }
+  }
+
+  &__btn:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__btn:hover &__icon::after {
+    top: 1rem;
+  }
+  
+  &__toggle:checked + &__btn > &__icon {
+    background: transparent;
+    
+    &::before {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+    &::after {
+      top: 0;
+      transform: rotate(135deg);
+    }
   }
 }
