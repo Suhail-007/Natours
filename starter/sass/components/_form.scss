@@ -16,6 +16,10 @@
     display: block;
     transition: all .5s;
 
+    @include respon(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none;
       transition: all .5s;
@@ -46,12 +50,19 @@
     opacity: 0;
     visibility: hidden;
   }
-  
-  &_radio-input {display: none;}
+
+  &_radio-input {
+    display: none;
+  }
 
   &_radio-group {
     width: 49%;
     display: inline-block;
+
+    @include respon(tab-port) {
+      width: 100%;
+      margin-top: 2rem;
+    }
   }
 
   &_radio-label {
@@ -86,8 +97,8 @@
       transition: all .5s;
     }
   }
-  
-  &_radio-input:checked ~ &_radio-label &_radio-button::after {
+
+  &_radio-input:checked~&_radio-label &_radio-button::after {
     opacity: 1;
   }
 }
