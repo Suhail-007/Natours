@@ -3,11 +3,25 @@
   margin-inline: auto;
   @include clearfix;
 
+  @include respon(tab-port) {
+    max-width: 90%;
+    padding: 3rem
+  }
+
   [class^="col-"] {
     float: left;
 
+    @include respon(tab-port) {
+      width: 100% !important;
+    }
+
     &:not(:last-child) {
       margin-right: $grid-margin-horizontal;
+
+      @include respon(tab-port) {
+        margin-right: 0;
+        margin-bottom: $grid-margin-vertical-small;
+      }
     }
   }
 

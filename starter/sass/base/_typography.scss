@@ -2,7 +2,6 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: $default-font-size;
-  padding: 3rem;
   line-height: 1.7;
   color: $color-grey-dark;
 }
@@ -26,6 +25,7 @@ body {
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
+
   }
 }
 
@@ -39,6 +39,7 @@ body {
   color: transparent;
   letter-spacing: .2rem;
   transition: all .2s;
+
 
   &:hover {
     transform: skewY(2deg) skewX(10deg) scale(1.1);

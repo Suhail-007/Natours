@@ -3,6 +3,10 @@
   background: $color-grey-light-3;
   font-size: 1.4rem;
   color: $color-grey-light-1;
+  
+  @include respon(tab-port) {
+    padding: 8rem 0;
+  }
 
   &_logo-box {
     text-align: center;
@@ -16,10 +20,16 @@
 
 
   &_navigation,
-  &_copyright{
+  &_copyright {
     border-top: 2px solid $color-grey-dark;
     padding-top: 2rem;
     display: inline-block;
+  }
+
+  &__navigation {
+    @include respon(tab-port) {
+      margin-bottom: 6rem;
+    }
   }
 
   &_list {
@@ -36,7 +46,7 @@
 
   .list_link {
     transition: all .3s;
-    
+
     &:link,
     &:visited {
       text-decoration: none;
@@ -45,15 +55,19 @@
       display: inline-block;
       background: $color-grey-light-3;
     }
-    
+
     &:active {
       color: $color-primary;
       transform: rotate(3deg) scale(1.1);
       box-shadow: 0 1rem 2rem rgba($color-black, .5);
     }
   }
-  
-   &_copyright {
+
+  &_copyright {
     float: right;
+
+    @include respon(tab-port) {
+      float: none;
+    }
   }
 }

@@ -5,7 +5,6 @@
 
   &_side {
     height: 50rem;
-    background-color: red;
     transition: all .8s;
     position: absolute;
     top: 0;
@@ -21,7 +20,6 @@
     }
 
     &-back {
-      background: blue;
       transform: rotateY(180deg);
 
       &-1 {
@@ -143,5 +141,61 @@
   &__price--value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  @include respon(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &_side {
+      height: auto;
+      position: relative;
+      border-radius: 0;
+      box-shadow: none;
+
+      &-back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &_side-front {
+      transform: rotateY(0);
+    }
+    
+    &-details {
+      padding: 2rem;
+    }
+
+    &__cta {
+      position: relative;
+      left: 0;
+      top: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 3rem 4rem 4rem;
+      
+      box-shadow: none;
+    }
+
+    &__price--box {
+      color: $color-white;
+      text-align: center;
+      width: 90%;
+      margin-bottom: 4rem;
+
+    }
+
+    &__price--only {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+    }
+
+    &__price--value {
+      font-size: 6rem;
+      font-weight: 100;
+    }
   }
 }
