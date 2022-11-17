@@ -40,6 +40,7 @@ body {
 
   @include respon(phone) {
     padding: 1rem;
+        color:red !important;
   }
 }
 
