@@ -10,16 +10,18 @@
     "concat:css": "concat -o css/style.concat.css css/style.comp.css css/icon-font.css",
     "post:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
     "compress:css": "sass css/style.prefix.css css/style.css --style compressed",
-    "build:css": "npm-run-all complie:sass concat:css post:css compress:css"
+    "build:css": "npm-run-all complie:sass concat:css post:css compress:css",
+    "build:parcel": "parcel index.html"
   },
   "author": "Suhail-007@github.com",
   "license": "ISC",
   "description": "Landing page for natours",
-   "devDependencies": {
-     "autoprefixer": "^10.4.13",
-     "concat": "^1.0.3",
-     "sass": "^1.56.1",
-     "npm-run-all": "^4.1.5",
-     "postcss-cli": "^10.0.0"
-   }
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "concat": "^1.0.3",
+    "sass": "^1.56.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.0.0",
+    "parcel-bundler": "1.12.5"
+  }
 }
