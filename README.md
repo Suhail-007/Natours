@@ -6,7 +6,7 @@ navbar is created with checkbox hack.
 <h2>Popup</h2>
 To open and close the popup css target property is used.
 
-<h2>Navbar</h2>
+<h2>Grid</h2>
 grid rows and columns is created with only using floats.
 
 
